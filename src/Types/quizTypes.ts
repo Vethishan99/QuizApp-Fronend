@@ -24,3 +24,12 @@ export interface SubmittedResponse {
   id: number;
   response: string;
 }
+
+export interface Question {
+  id: number;
+  questionTitle: string;
+  options: string[];
+  rightAnswer?: string;
+  category?: string;
+  difficultyLevel?: string;
+}

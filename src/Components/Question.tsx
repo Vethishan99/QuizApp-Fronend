@@ -26,7 +26,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({
           >
             <input
               type="radio"
-              name={question.id}
+              name={question.id.toString()}
               value={option}
               checked={selectedAnswer === option}
               onChange={() => onSelect(option)}

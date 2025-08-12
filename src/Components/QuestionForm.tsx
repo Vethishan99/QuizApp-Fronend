@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { addQuestion } from "../Service/service";
 import type { QuestionFull } from "../Types/quizTypes";
 
-const emptyQuestion = (): QuestionFull => ({
-  id: 0,
+const emptyQuestion = (): Omit<QuestionFull, "id"> => ({
   questionTitle: "",
   category: "",
   option1: "",
@@ -15,7 +14,7 @@ const emptyQuestion = (): QuestionFull => ({
 });
 
 export default function QuestionForm() {
-  const [q, setQ] = useState<QuestionFull>(emptyQuestion());
+  const [q, setQ] = useState<Omit<QuestionFull, "id">>(emptyQuestion());
   const [loading, setLoading] = useState(false);
 
   const handleChange = (k: keyof QuestionFull, v: string) =>
